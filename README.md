@@ -228,3 +228,24 @@ check, enum 제약을 사용하면 변경이 몹시 어려움.
 ## 해법: BLOB 타입
 
 or S3 쓰기./
+
+---
+
+# 인덱스 샷건
+
+성능최적화  
+복합인덱스에서는 순서가 중요하다. 검색, 조인, 정렬 순서에 맞게 배열한다.
+
+선택도(selectivity) = count distinct COLUMN / count COLUMN
+
+## 해법: 인덱스를 MENTOR하라
+
+Measure, Explain, Nominate, Test, Optimize, Rebuild
+
+> 커버링인덱스: 인덱스에 추가속성 포함시켜서 실제 대응되는 행을 찾지 않아도 되게 하는 기법
+
+오토매틱 어드바이저 사용.
+
+### 인덱스를 캐시에 미리 로딩하기: Mysql load index into cache; 등등
+
+인덱스 재구성 정비 도구 사용.
