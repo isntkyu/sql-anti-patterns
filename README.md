@@ -249,3 +249,20 @@ Measure, Explain, Nominate, Test, Optimize, Rebuild
 ### 인덱스를 캐시에 미리 로딩하기: Mysql load index into cache; 등등
 
 인덱스 재구성 정비 도구 사용.
+
+---
+
+# 모르는 것에 대란 두려움
+
+null 과의 비교는 어떻게 햐도 참이 될 수 없다.  
+다음 모두 null 인 값이 select 되지 않는다.  
+- where col = 1
+- where not (col = 1)
+- where col = null
+- where col <> null
+- where null = null
+
+참이 되는 경우
+- where null or true
+
+
