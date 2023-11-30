@@ -287,3 +287,23 @@ mysql은 단일.값 규칙 위반한 컬럼을 (물리적으로) 첫번째 행�
 임의정렬 문제 order by rand() 은 인덱스를 활용 못해 성능이 낮다.
 
 해법으로는 max pk나 count rows 를 해서 랜덤 pk나 offset 을 사용한다.
+
+---
+
+# 가난한 자의 검색 엔진
+
+정규식 검색이나 like 앞뒤와일드카드 검색의 성능문제
+
+
+### 해법
+
+#### Mysql myisam  
+fulltext index  
+select where match() - against 
+
+#### oracle
+context  where contains
+ctxcat
+
+#### PostgreSql
+tsvector 타입 컬럼.
